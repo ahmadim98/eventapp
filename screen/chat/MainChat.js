@@ -48,6 +48,12 @@ export default class MainChat extends React.Component {
   }
 }
 
+const AppNavigator = createStackNavigator({
+   Main: { screen: MainChat },
+   Room: { screen: ChatRoom},
+});
+
+
 const list = [
   {
     id:1,
