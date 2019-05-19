@@ -23,6 +23,8 @@ npm install --save react-native-elements
 npm install --save react-native-tabbar-bottom
 npm install --save native-base
 npm install --save react-navigation
+npm install --save react-native-maps
+npm install --save react-native-elements
 ```
 
 if you want to compile through on the library natively then make sure to
