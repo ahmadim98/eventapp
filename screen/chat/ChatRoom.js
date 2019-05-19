@@ -2,30 +2,29 @@ import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { ListItem, Header } from 'react-native-elements';
 
-export default class Chat extends React.Component {
+export default class ChatRoom extends React.Component {
   keyExtractor = (item, index) => index.toString()
-  
+
   renderItem = ({ item }) => (
     <ListItem
       title={item.name}
       subtitle={item.subtitle}
-      leftAvatar={{
-        source: item.avatar_url && { uri: item.avatar_url },
-        title: item.name[0]
-      }}
+      //leftAvatar={{ source: { uri: item.avatar_url } }}
     />
   )
+  
   
   render() {
     return (
       <View style={styles.container}>
       <Header
+      statusBarProps={{ barStyle: 'light-content' }}
       containerStyle={{
-    backgroundColor: '#e3e3e3',
+    backgroundColor: '#16394f',
       }}
-      leftComponent={{ icon: 'menu', color: '#fff' }}
-      centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-      rightComponent={{ icon: 'home', color: '#fff' }}
+      leftComponent={{ icon: 'menu', color: 'white' }}
+      centerComponent={{ text: 'Amy', style: { color: 'white' } }}
+      rightComponent={{ icon: 'home', color: 'white' }}
       />
       <FlatList
       keyExtractor={this.keyExtractor}
@@ -39,11 +38,13 @@ export default class Chat extends React.Component {
 
 const list = [
   {
+    id:1,
     name: 'Amy Farha',
     subtitle: 'Vice President'
   },
   
   {
+    id:2,
     name: 'Chris Jackson',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman'

@@ -4,7 +4,8 @@ import Tabbar from 'react-native-tabbar-bottom'
 import { createStackNavigator } from "react-navigation";
 import Map from '../screen/map/Map';
 import Tasks from '../screen/tasks/Tasks';
-import Chat from '../screen/chat/Chat';
+import MainChat from '../screen/chat/MainChat';
+//import ChatRoom from '../screen/chat/ChatRoom';
 import Settings from '../screen/settings/Settings';
 
 export default class TabbarNavigator extends React.Component {
@@ -25,13 +26,14 @@ export default class TabbarNavigator extends React.Component {
         
         {this.state.page === "Map" && <Map navigation={this.props.navigation}>Map Screen</Map>}
         {this.state.page === "Tasks" && <Tasks navigation={this.props.navigation}>Tasks Screen</Tasks>}
-        {this.state.page === "Chat" && <Chat navigation={this.props.navigation}>Chat Screen</Chat>}
+        {this.state.page === "MainChat" && <MainChat navigation={this.props.navigation}>MainChat Screen</MainChat>}
+        {/*{this.state.page === "ChatRoom" && <ChatRoom navigation={this.props.navigation}>ChatRoom Screen</ChatRoom>}*/}
         {this.state.page === "Settings" && <Settings navigation={this.props.navigation}>Settings Screen</Settings>}
         
         {/*{this.state.page === "HomeScreen" && <Text>Screen1</Text>}
         {this.state.page === "NotificationScreen" && <Text>Screen2</Text>}
         {this.state.page === "ProfileScreen" && <Text>Screen3</Text>}
-        {this.state.page === "ChatScreen" && <Text>Screen4</Text>}
+        {this.state.page === "MainChatScreen" && <Text>Screen4</Text>}
         {this.state.page === "SearchScreen" && <Text>Screen5</Text>}*/}
         
         <Tabbar
@@ -40,6 +42,9 @@ export default class TabbarNavigator extends React.Component {
             //this.props.navigation.setParams({tabTitle: tab.title})
           }}
           activePage={this.state.page}
+          tabbarBgColor={'#eaeaea'}
+          selectedIconColor={'#16394f'}
+          iconColor={'#5b5b5b'}
           tabs={[
             {
               page: "Map",
@@ -51,7 +56,7 @@ export default class TabbarNavigator extends React.Component {
               badgeNumber: 11,
             },
             {
-              page: "Chat",
+              page: "MainChat",
               icon: "chatbubbles",
               badgeNumber: 7,
             },
@@ -74,13 +79,17 @@ const TasksNavigator = createStackNavigator({
   page: Tasks
 });
 
-const ChatNavigator = createStackNavigator({
-  page: Chat
+const MainChatNavigator = createStackNavigator({
+  page: MainChat
 });
 
 const SettingsNavigator = createStackNavigator({
   page: Settings
 });
+
+/*const ChatRoomNavigator = createStackNavigator({
+  page: ChatRoom
+});*/
 
 const styles = StyleSheet.create({
   container: {
