@@ -5,7 +5,6 @@ import { createStackNavigator } from "react-navigation";
 import Map from '../screen/map/Map';
 import Tasks from '../screen/tasks/Tasks';
 import MainChat from '../screen/chat/MainChat';
-//import ChatRoom from '../screen/chat/ChatRoom';
 import Settings from '../screen/settings/Settings';
 
 export default class TabbarNavigator extends React.Component {
@@ -86,10 +85,6 @@ const MainChatNavigator = createStackNavigator({
 const SettingsNavigator = createStackNavigator({
   page: Settings
 });
-
-/*const ChatRoomNavigator = createStackNavigator({
-  page: ChatRoom
-});*/
 
 const styles = StyleSheet.create({
   container: {

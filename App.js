@@ -5,6 +5,7 @@ import { createStackNavigator } from "react-navigation";
 import Map from './screen/map/Map';
 import TabbarNavigator from './components/tabbarNavigator';
 
+
 export default class App extends React.Component {
   constructor() {
     super()
@@ -12,6 +13,7 @@ export default class App extends React.Component {
       page: "Map",
     }
   }
+  
   
   render() {
     return (
@@ -22,9 +24,9 @@ export default class App extends React.Component {
   }
 }
 
-const MapNavigator = createStackNavigator({
+/*const MapNavigator = createStackNavigator({
   page: Map
-});
+});*/
 
 const styles = StyleSheet.create({
   container: {

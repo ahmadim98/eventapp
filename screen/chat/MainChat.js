@@ -1,10 +1,14 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { ListItem, Header } from 'react-native-elements';
-import { createStackNavigator } from "react-navigation";
+import { createStackNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation';
 import ChatRoom from './ChatRoom';
+import UserProfile from '../../components/UserProfile';
 
-export default class MainChat extends React.Component {
+class MainChat extends React.Component {
+  static navigationOptions = {
+       header: null
+   }
   keyExtractor = (item, index) => index.toString()//this thing to make every listitem special in the list "exmaple : by id in database or email"
   
   //const ChatNavigae = this.props.navigation;
@@ -15,15 +19,18 @@ export default class MainChat extends React.Component {
     <ListItem
       title={item.name}
       subtitle={item.subtitle}
+      subtitleStyle={{ color: item.statuscolor, }}
       leftAvatar={{
         source: item.avatar_url && { uri: item.avatar_url },
         title: item.name[0]
       }}
+      topDivider={true}
+      chevron
+      onPress={this._showMoreApp}
       //onPress={()=>this.props.navigation.navigate('ChatRoom')}
       //onPress={() => this.props.navigation.navigate('ChatRoom')}
     />
   )
-  
   
   render() {
     
@@ -32,11 +39,11 @@ export default class MainChat extends React.Component {
       <Header
       statusBarProps={{ barStyle: 'light-content' }}
       containerStyle={{
-    backgroundColor: '#16394f',
+    backgroundColor: '#2d75a3',
       }}
-      leftComponent={{ icon: 'menu', color: 'white' }}
+      leftComponent={{ icon: 'warning', color: 'white' }}
       centerComponent={{ text: 'Loading', style: { color: 'white' } }}
-      rightComponent={{ icon: 'home', color: 'white' }}
+      rightComponent={{ icon: 'person-add', color: 'white' }}
       />
       <FlatList
       keyExtractor={this.keyExtractor}
@@ -46,26 +53,26 @@ export default class MainChat extends React.Component {
       </View>
     );
   }
+  _showMoreApp = () => {
+    this.props.navigation.navigate('ChatRoom');
+  };
 }
-
-const AppNavigator = createStackNavigator({
-   Main: { screen: MainChat },
-   Room: { screen: ChatRoom},
-});
 
 
 const list = [
   {
     id:1,
     name: 'Amy Farha',
-    subtitle: 'Vice President'
+    subtitle: 'Availabe',
+    statuscolor: 'green'
   },
   
   {
     id:2,
     name: 'Chris Jackson',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
+    subtitle: 'Busy Now !',
+    statuscolor: 'red'
   },
 ]
 
@@ -78,3 +85,16 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
   },
 });
+
+const AppStack = createStackNavigator({ Home: MainChat, ChatRoom: ChatRoom, Profile:UserProfile });
+
+export default createAppContainer(createSwitchNavigator(
+  {
+    //AuthLoading: AuthLoadingScreen,
+    App: AppStack,
+    //Auth: AuthStack,
+  },
+  {
+    initialRouteName: 'App',
+  }
+));
