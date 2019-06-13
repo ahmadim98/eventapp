@@ -4,7 +4,7 @@ import Tabbar from 'react-native-tabbar-bottom'
 import { createStackNavigator } from "react-navigation";
 import Map from './screen/map/Map';
 import TabbarNavigator from './components/tabbarNavigator';
-
+import { Font } from 'expo';
 
 export default class App extends React.Component {
   constructor() {
@@ -14,6 +14,11 @@ export default class App extends React.Component {
     }
   }
   
+  componentDidMount() {
+    Font.loadAsync({
+      'Ionicons': require('./node_modules/react-native-ionicons/fonts/Ionicons.ttf'),
+    });
+  }
   
   render() {
     return (

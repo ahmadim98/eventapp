@@ -26,6 +26,7 @@ npm install --save react-navigation
 npm install --save react-native-maps
 npm install --save react-native-elements
 npm install --save react-native-autogrow-textinput
+npm install --save react-native-ionicons
 ```
 
 if you want to compile through on the library natively then make sure to
