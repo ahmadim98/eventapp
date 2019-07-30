@@ -2,6 +2,9 @@
 App created with react-native that are used to organize events.
 "Still under progress !"
 
+## Screenshots of the app
+![Alt text](screenshots/IMG_6084.JPEG?raw=true "Optional Title")
+
 ## Installation
 
 These are the required Packages to compile it with expo
