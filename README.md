@@ -3,8 +3,13 @@ App created with react-native that are used to organize events.
 "Still under progress !"
 
 ## Screenshots of the app
-![Alt text](screenshots/IMG_6084.JPEG?raw=true "Optional Title")
-<img src="screenshots/IMG_6084.JPEG?raw=true" width="80" height="100"/>
+<img src="screenshots/IMG_6084.JPEG?raw=true" width="450" height="800"/>
+<img src="screenshots/IMG_6085.JPEG?raw=true" width="450" height="800"/>
+<img src="screenshots/IMG_6086.JPEG?raw=true" width="450" height="800"/>
+<img src="screenshots/IMG_6087.JPEG?raw=true" width="450" height="800"/>
+<img src="screenshots/IMG_6088.JPEG?raw=true" width="450" height="800"/>
+<img src="screenshots/IMG_6089.JPEG?raw=true" width="450" height="800"/>
+<img src="screenshots/IMG_6090.JPEG?raw=true" width="450" height="800"/>
 
 ## Installation
 
