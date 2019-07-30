@@ -8,7 +8,6 @@ export default class ChatRoom extends React.Component {
        header: null,
    }
    
-   //this.props.hideBar: true;
    
   keyExtractor = (item, index) => index.toString()
 
@@ -33,18 +32,6 @@ export default class ChatRoom extends React.Component {
     borderColor: '#eaeaea'
       }}
     />
-    /*<ListItem
-      friction={90} //
-      tension={100} // These props are passed to the parent component (here TouchableScale)
-      activeScale={0.95} //
-      leftAvatar={{ rounded: true, source: { uri: item.avatar_url } }}
-      title="Chris Jackson"
-      titleStyle={{ color: 'white', fontWeight: 'bold' }}
-      subtitleStyle={{ color: 'white' }}
-      subtitle="Vice Chairman"
-      chevronColor="white"
-      chevron
-    />*/
   )
   
   

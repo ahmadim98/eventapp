@@ -10,7 +10,7 @@ class MainChat extends React.Component {
   constructor() {
     super();
     this.state = {
-      isVisible: false,
+      showAdd: false,
     }
   }
   
@@ -18,10 +18,6 @@ class MainChat extends React.Component {
        header: null
    }
   keyExtractor = (item, index) => index.toString()//this thing to make every listitem special in the list "exmaple : by id in database or email"
-  
-  //const ChatNavigae = this.props.navigation;
-  //const {navigate} = this.props.navigation;
-  //const { navigate } = props.navigation;
   renderItem = ({ item }) => (
     
     <ListItem
@@ -54,7 +50,7 @@ class MainChat extends React.Component {
      </TouchableHighlight>}
       centerComponent={{ text: 'Loading', style: { color: 'white' } }}
       //rightComponent={{ icon: 'person-add', color: 'white' }}
-      rightComponent={<Button onPress={() => this.setState({ isVisible: true })} type={'clear'} icon={{
+      rightComponent={<Button onPress={() => this.setState({ showAdd: true })} type={'clear'} icon={{
     name: "person-add",
     size: 20,
     color: "white", }} />}
@@ -65,9 +61,10 @@ class MainChat extends React.Component {
       renderItem={this.renderItem}
       />
       
+      {/*add user overlay here*/}
       <Overlay
-        isVisible={this.state.isVisible}
-        onBackdropPress={() => this.setState({ isVisible: false })}
+        isVisible={this.state.showAdd}
+        onBackdropPress={() => this.setState({ showAdd: false })}
         height={150}
         width={225}
       >
